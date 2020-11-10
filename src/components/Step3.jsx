@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {data} from '../data/dishes'
 import {FormControl,InputLabel,Select,MenuItem,Table,TableHead,TableRow,TableCell,TableBody,Button,IconButton,Icon,} from '@material-ui/core';
 import {SelectFood,DeleteFood} from '../actions/index'
+import { BiAddToQueue } from "react-icons/bi";
 class Step3 extends Component {
     state={
         foods : [],
@@ -168,7 +169,7 @@ class Step3 extends Component {
                         })()}
                     </Select>
                 </FormControl>  
-                <Button variant="contained" onClick={this.addFood} color="primary" style={{marginTop:"10px", marginLeft:"50px"}}>ORDER</Button>
+                <Button variant="contained" onClick={this.addFood} color="primary" style={{marginTop:"10px", marginLeft:"50px"}}><BiAddToQueue/></Button>
                 <Table className="crud-table" style={{ whiteSpace: "pre", width:"300px", marginLeft:"40%", marginTop:"30px"}}>
                     <TableHead>
                         <TableRow>
