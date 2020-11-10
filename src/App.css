@@ -39,5 +39,15 @@
 .h1 {
   background-color: coral;
   color : white;
-  padding: 20px
+  padding: 20px;
+  margin : 0;
+}
+.buttonback {
+  margin-left: 0px;
+}
+.bock {
+  border-style: double
+}
+.h2 {
+  text-align: center;
 }

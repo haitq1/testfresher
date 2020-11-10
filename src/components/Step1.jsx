@@ -44,7 +44,7 @@ class Step1 extends Component {
           className="mt-16"
           style={{ width: "300px", marginLeft: "150px" }}
         >
-          <InputLabel>{<span>Please enter number of people</span>}</InputLabel>
+          <InputLabel>{<span>Please select number of people</span>}</InputLabel>
           <Select
             defaultValue={this.props.people ? this.props.people : ""}
             onChange={(event) => this.handleChangePeople(event)}

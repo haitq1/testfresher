@@ -3,13 +3,14 @@ import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
-import Step1 from './containers/Step1';
-import Step2 from './containers/Step2';
-import Step3 from './containers/Step3';
-import Review from './containers/Review';
+import Step1 from './components/Step1';
+import Step2 from './components/Step2';
+import Step3 from './components/Step3';
+import Review from './components/Review';
 import { connect } from 'react-redux';
 import { ResetValue } from './actions/index';
 import './App.css'
+import { HiArrowLeft,HiArrowRight,HiCheck } from "react-icons/hi";
 const steps = ['Step 1', 'Step 2', 'Step 3', 'Review']
 
 class App extends Component {
@@ -103,19 +104,19 @@ class App extends Component {
   render() {
     var { activeStep } = this.state
     return (
-      <div className="App">
+      <div className="App" class="h2">
         <header>
           <h1 class="h1">MY ORDER</h1>
         </header>
-        <Stepper activeStep={activeStep} alternativeLabel>
+        <Stepper activeStep={activeStep} alternativeLabel > 
           {steps.map((step) => (
-            <Step key={step}>
+            <Step key={step} >
               <StepLabel>{step}</StepLabel>
             </Step>
           ))}
         </Stepper>
         {this.checkStep()}
-        <div style={{ marginTop: "30px" }}>
+        <div style={{ marginTop: "30px"}} >
           {activeStep === steps.length ? (
             <div>
               <Button variant="contained" onClick={this.handleReset} color="default" style={{ marginLeft: "50px" }}>Reset</Button>
@@ -123,15 +124,18 @@ class App extends Component {
           ) : (
               <div>
                 <div>
-                  <Button
+                
+                  <Button            
                     disabled={activeStep === 0}
                     onClick={this.handleBack}
-                    style={{ marginLeft: "50px" }}
+                    style={{ marginLeft: "50px", float: "left", }}
+                    variant="contained" 
+                    color="primary"
                   >
-                    Back
+                   < HiArrowLeft />
                 </Button>
                   <Button disabled={this.state.isDisable} variant="contained" color="primary" onClick={this.handleNext} style={{ float: "right", marginRight: "50px" }}>
-                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                    {activeStep === steps.length - 1 ? < HiCheck /> : < HiArrowRight />}
                   </Button>
                 </div>
               </div>

@@ -107,7 +107,6 @@ class Step3 extends Component {
     }
     renderFoods = (foods) =>{
         var result = null;
-        console.log(foods)
         if(foods.length > 0){
             result = foods.map((food,key)=>{
                 return(
@@ -152,17 +151,8 @@ class Step3 extends Component {
                 <FormControl fullWidth={true}  className="mt-16" style = {{width:"300px", marginLeft:"150px"}}>
                     <InputLabel >{<span>Please enter number of people</span>}</InputLabel>
                     <Select
-                        // value={this.state? this.state.people : ''}
-                        // defaultValue={this.props.people ? this.props.people : ''}
                         onChange={(event) => this.handleChangeCountFood(event)}
                     >
-                        {/* {Meals.map((item) => {
-                            return (
-                                <MenuItem key={item} value={item}>
-                                    {item}
-                                </MenuItem>
-                            )
-                        })} */}
                         {(() => {
                             const options = [];
 
