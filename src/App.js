@@ -104,6 +104,7 @@ class App extends Component {
   render() {
     var { activeStep } = this.state
     return (
+      <div class="back">
       <div className="App" class="h2">
         <header>
           <h1 class="h1">MY ORDER</h1>
@@ -141,6 +142,7 @@ class App extends Component {
               </div>
             )}
         </div>
+      </div>
       </div>
     );
   }
